@@ -1,15 +1,18 @@
 'use strict';
 
-const CACHE_NAME = 'colonia-cagarros-v1.1.0';
+const CACHE_NAME = 'colonia-cagarros-v1.2.0';
 const APP_FILES = [
   './',
   './index.html',
   './styles.css',
+  './enhancements.css',
   './app.js',
+  './enhancements.js',
   './manifest.webmanifest',
   './CREDITS.md',
   './assets/icons/icon-192.png',
   './assets/icons/icon-512.png',
+  './assets/branding/barra-circular-ocean.svg',
   './assets/audio/cagarro_01.mp3',
   './assets/audio/cagarro_02.mp3',
   './assets/audio/cagarro_03.mp3',
