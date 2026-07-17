@@ -15,9 +15,11 @@
   <div class="app-shell">
     <header class="topbar">
       <div class="brand">
-        <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true">
-          <path d="M5 35c12-3 20-11 28-23 2 9 7 15 16 18-7 1-13 4-17 9-7-4-16-5-27-4Z" fill="currentColor"/>
-          <path d="M31 39c7-5 16-7 28-6-8 4-14 9-19 17-1-5-4-8-9-11Z" fill="currentColor" opacity=".75"/>
+        <svg class="brand-mark" viewBox="0 0 160 96" aria-hidden="true">
+          <path class="brand-wing" d="M7 45C29 22 53 18 76 35c17-18 43-20 77-7-23 1-43 8-59 23-7 7-15 10-24 8-11-3-21-9-30-17C28 34 17 39 7 45Z"/>
+          <path class="brand-body" d="M69 37c4-18 15-27 29-23 9 2 15 9 16 18l18 3-18 6c-4 13-14 23-29 31l-3 15-8-17c-7-9-9-20-5-33Z"/>
+          <circle class="brand-eye" cx="100" cy="27" r="2.8"/>
+          <path class="brand-beak" d="m113 31 24 5-24 6Z"/>
         </svg>
         <div>
           <p class="eyebrow">Atividade educativa</p>
@@ -43,6 +45,14 @@
       <section class="colony-stage" aria-labelledby="counterLabel">
         <div class="stars" aria-hidden="true"></div>
         <div id="birdLayer" class="bird-layer" aria-hidden="true"></div>
+        <svg class="hero-cagarro" viewBox="0 0 260 150" aria-hidden="true">
+          <path class="hero-wing hero-wing-left" d="M126 68C91 36 48 23 9 31c29 11 55 26 79 48 13 12 27 17 42 15Z"/>
+          <path class="hero-wing hero-wing-right" d="M128 68c37-37 81-50 124-35-35 7-64 24-91 49-12 11-24 15-37 12Z"/>
+          <path class="hero-body" d="M112 64c2-29 18-48 39-46 17 1 29 14 31 33l28 7-29 8c-6 24-25 42-54 55l-8 24-12-29c-10-15-9-34 5-52Z"/>
+          <circle class="hero-eye" cx="164" cy="42" r="4"/>
+          <path class="hero-beak" d="m180 49 48 10-47 12Z"/>
+          <path class="hero-belly" d="M122 75c13 10 28 13 46 8-7 17-20 28-39 36Z"/>
+        </svg>
         <div class="cliff" aria-hidden="true"></div>
         <div class="sea" aria-hidden="true">
           <span></span><span></span><span></span>
@@ -98,6 +108,13 @@
         </details>
       </section>
     </main>
+
+    <section class="project-branding" aria-label="Entidades e programas associados ao projeto">
+      <p>Aplicação desenvolvida no âmbito do projeto CircularOcean</p>
+      <div class="project-logo-panel">
+        <img src="assets/branding/barra-circular-ocean.svg" alt="Logótipos MAC 2021-2027, CircularOcean, Interreg MAC, União Europeia e entidades do projeto">
+      </div>
+    </section>
 
     <footer>
       <button id="creditsButton" class="footer-link" type="button">Créditos das gravações</button>
