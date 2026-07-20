@@ -1,6 +1,6 @@
 'use strict';
 
-const CACHE_NAME = 'colonia-cagarros-v1.2.0';
+const CACHE_NAME = 'colonia-cagarros-v1.2.1';
 const APP_FILES = [
   './',
   './index.html',
