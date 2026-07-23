@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#124d32">
+  <meta name="description" content="Misturador educativo de vocalizações de aves terrestres gravadas nos Açores.">
+  <title>Vozes da Floresta Açoriana</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="forest-backdrop" aria-hidden="true">
+    <span class="leaf leaf-one"></span><span class="leaf leaf-two"></span><span class="leaf leaf-three"></span>
+  </div>
+
+  <header class="hero">
+    <div class="hero-mark" aria-hidden="true">
+      <svg viewBox="0 0 96 96" role="img">
+        <path d="M19 62c10-27 32-43 62-44-8 31-28 51-59 58 8-11 20-22 36-32-17 6-30 13-39 18Z"/>
+        <path d="M30 67c18 0 31 5 42 16-23 1-40-4-51-16 3-1 6-1 9 0Z"/>
+      </svg>
+    </div>
+    <div>
+      <p class="eyebrow">Atividade educativa · Açores</p>
+      <h1>Vozes da Floresta Açoriana</h1>
+      <p class="hero-copy">Escolhe espécies e tipos de vocalização para criares a tua própria paisagem sonora.</p>
+    </div>
+    <button id="infoButton" class="icon-button" type="button" aria-label="Informação e créditos">i</button>
+  </header>
+
+  <main>
+    <section class="intro-panel">
+      <div class="azores-seal"><span aria-hidden="true">✓</span><strong>Seleção regional</strong></div>
+      <p>As gravações ativas nesta versão foram registadas nos Açores. O sexo só é apresentado quando consta da ficha do Xeno-canto.</p>
+    </section>
+
+    <section class="filter-panel" aria-label="Pesquisa e filtros">
+      <label class="search-field" for="searchInput">
+        <span>Pesquisar espécie</span>
+        <input id="searchInput" type="search" placeholder="Ex.: melro, priolo, Asio otus">
+      </label>
+
+      <fieldset>
+        <legend>Sexo</legend>
+        <div id="sexFilters" class="chip-row"></div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Tipo de vocalização</legend>
+        <div id="typeFilters" class="chip-row"></div>
+      </fieldset>
+
+      <div class="filter-actions">
+        <button id="selectVisibleButton" class="soft-button" type="button">Selecionar gravações visíveis</button>
+        <button id="clearFiltersButton" class="text-button" type="button">Limpar filtros</button>
+      </div>
+    </section>
+
+    <section class="catalogue-heading">
+      <div>
+        <p class="eyebrow">Biblioteca sonora</p>
+        <h2>Aves terrestres dos Açores</h2>
+      </div>
+      <output id="visibleCount" class="visible-count">0 espécies</output>
+    </section>
+
+    <section id="speciesGrid" class="species-grid" aria-live="polite"></section>
+  </main>
+
+  <aside class="mixer" aria-label="Misturador de vocalizações">
+    <div class="mixer-summary">
+      <span class="mixer-icon" aria-hidden="true">♫</span>
+      <div>
+        <strong id="selectionTitle">Nenhuma gravação selecionada</strong>
+        <span id="selectionDetail">Escolhe uma ou mais vocalizações.</span>
+      </div>
+    </div>
+
+    <label class="volume-control" for="volumeControl">
+      <span>Volume</span>
+      <input id="volumeControl" type="range" min="0" max="100" value="72">
+      <output id="volumeOutput">72%</output>
+    </label>
+
+    <div class="mixer-actions">
+      <button id="playButton" class="play-button" type="button" disabled><span aria-hidden="true">▶</span> Tocar seleção</button>
+      <button id="stopButton" class="stop-button" type="button" disabled><span aria-hidden="true">■</span> Parar</button>
+      <button id="clearSelectionButton" class="clear-button" type="button" disabled>Limpar</button>
+    </div>
+    <p id="status" class="status" role="status" aria-live="polite">A floresta está em silêncio.</p>
+  </aside>
+
+  <dialog id="infoDialog" class="info-dialog">
+    <div class="dialog-card">
+      <button id="closeInfoButton" class="dialog-close" type="button" aria-label="Fechar">×</button>
+      <p class="eyebrow">Informação e créditos</p>
+      <h2>Como usar</h2>
+      <p>Marca as gravações que pretendes ouvir. Podes combinar espécies, cantos, chamamentos e alarmes. Ao carregar em <strong>Tocar seleção</strong>, as faixas entram em ciclo até carregares em <strong>Parar</strong>.</p>
+      <h3>Critérios da biblioteca</h3>
+      <ul>
+        <li>A localização indicada na ficha tem de ser nos Açores.</li>
+        <li>O sexo não é deduzido pelo som. Surge como “não indicado” quando não há informação.</li>
+        <li>Cada gravação mantém a autoria e a licença indicadas no Xeno-canto.</li>
+      </ul>
+      <h3>Notas desta versão</h3>
+      <p><strong>Priolo:</strong> ainda não foi localizada uma gravação elegível no Xeno-canto, por isso a espécie aparece assinalada como pendente.</p>
+      <p><strong>Verdilhão:</strong> a gravação candidata tem uma localização demasiado genérica na ficha consultada e permanece pendente até confirmação.</p>
+      <p><strong>Mocho:</strong> nos Açores a espécie residente é <em>Asio otus</em>, também designada bufo-pequeno.</p>
+      <p class="dialog-note">As ligações “Ver no Xeno-canto” permitem consultar a ficha original, o autor e a licença de cada som.</p>
+    </div>
+  </dialog>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
