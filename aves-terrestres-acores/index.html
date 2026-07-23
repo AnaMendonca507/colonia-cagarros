@@ -4,12 +4,18 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#124d32">
+  <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Vozes Açores">
   <meta name="description" content="Misturador educativo de vocalizações de aves terrestres gravadas nos Açores.">
   <title>Vozes da Floresta Açoriana</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icon.svg">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="mobile.css">
+  <link rel="stylesheet" href="pwa.css">
 </head>
 <body>
   <div class="forest-backdrop" aria-hidden="true">
@@ -35,6 +41,7 @@
     <section class="intro-panel">
       <div class="azores-seal"><span aria-hidden="true">✓</span><strong>Seleção regional</strong></div>
       <p>As gravações ativas nesta versão foram registadas nos Açores. O sexo só é apresentado quando consta da ficha do Xeno-canto.</p>
+      <button id="installAppButton" class="install-app-button" type="button">Instalar app</button>
     </section>
 
     <section class="filter-panel" aria-label="Pesquisa e filtros">
@@ -99,6 +106,8 @@
       <p class="eyebrow">Informação e créditos</p>
       <h2>Como usar</h2>
       <p>Marca uma vocalização para começar a ouvi-la imediatamente. Podes continuar a marcar outras espécies e tipos de som enquanto as anteriores estão a tocar. Ao desmarcar uma vocalização, pára apenas esse som. O botão <strong>Parar</strong> silencia tudo sem apagar a seleção; <strong>Limpar</strong> pára os sons e desmarca todas as escolhas.</p>
+      <h3>Instalação</h3>
+      <p>Usa o botão <strong>Instalar app</strong>. No iPhone, abre a página no Safari, toca em <strong>Partilhar</strong> e escolhe <strong>Adicionar ao ecrã principal</strong>.</p>
       <h3>Critérios da biblioteca</h3>
       <ul>
         <li>A localização indicada na ficha tem de ser nos Açores.</li>
@@ -120,5 +129,6 @@
   <script src="tentilhao-patch.js" defer></script>
   <script src="toutinegra-patch.js" defer></script>
   <script src="live-playback-patch.js" defer></script>
+  <script src="install-pwa.js" defer></script>
 </body>
 </html>
