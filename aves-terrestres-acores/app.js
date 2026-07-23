@@ -18,7 +18,7 @@ const speciesLibrary = [
     initials: 'TO',
     recordings: [
       { id: '817414', type: 'Canto', sex: 'Macho', location: 'Paul da Pedreira do Cabo da Praia, ilha Terceira, Açores', recordist: 'Carlos Pereira' },
-      { id: '759454', type: 'Alarme', sex: 'Não indicado', location: 'Rocha do Penedo, ilha Terceira, Açores', recordist: 'Consultar ficha' }
+      { id: '759454', type: 'Alarme', sex: 'Não indicado', location: 'Trilho da Rocha do Penedo, ilha Terceira, Açores', recordist: 'Alba Villarroya' }
     ]
   },
   {
@@ -54,7 +54,7 @@ const speciesLibrary = [
     scientific: 'Regulus regulus',
     initials: 'ES',
     recordings: [
-      { id: '831497', type: 'Canto', sex: 'Não indicado', location: 'Cabrita, ilha Terceira, Açores', recordist: 'Carlos Pereira' },
+      { id: '831497', type: 'Canto', sex: 'Não indicado', location: 'Cabrita, ilha Terceira, Açores', recordist: 'Mats Rellmar' },
       { id: '257167', type: 'Chamamento', sex: 'Não indicado', location: 'Açores', recordist: 'Cedric Mroczko' }
     ]
   },
@@ -65,7 +65,7 @@ const speciesLibrary = [
     initials: 'PI',
     recordings: [
       { id: '790990', type: 'Canto', sex: 'Não indicado', location: 'Pau Velho, Praia da Vitória, ilha Terceira, Açores', recordist: 'Carlos Pereira' },
-      { id: '785347', type: 'Canto', sex: 'Não indicado', location: 'Doze Ribeiras, ilha Terceira, Açores', recordist: 'Carlos Pereira' }
+      { id: '785205', type: 'Canto', sex: 'Não indicado', location: 'Doze Ribeiras, ilha Terceira, Açores', recordist: 'Carlos Pereira' }
     ]
   },
   {
@@ -104,8 +104,8 @@ const speciesLibrary = [
     scientific: 'Serinus canaria',
     initials: 'CA',
     recordings: [
-      { id: '842459', type: 'Canto', sex: 'Não indicado', location: 'Ilha do Pico, Açores', recordist: 'Carlos Pereira' },
-      { id: '842457', type: 'Chamamento e voo', sex: 'Não indicado', location: 'Ilha do Pico, Açores', recordist: 'Carlos Pereira' }
+      { id: '842459', type: 'Canto', sex: 'Incerto', location: 'Ribeiras, perto de Santo Amaro, Lajes do Pico, Açores', recordist: 'Guido O. Keijl' },
+      { id: '842457', type: 'Chamamento e voo', sex: 'Não indicado', location: 'Ribeiras, perto de Santo Amaro, Lajes do Pico, Açores', recordist: 'Guido O. Keijl' }
     ]
   },
   {
@@ -155,6 +155,7 @@ const recordings = speciesLibrary.flatMap((species) =>
 const selectedIds = new Set();
 const activeAudio = new Map();
 let isPlaying = false;
+let playbackSession = 0;
 
 function normalise(value) {
   return String(value || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
@@ -291,6 +292,7 @@ function audioUrl(id) {
 }
 
 function stopAll(updateStatus = true) {
+  playbackSession += 1;
   activeAudio.forEach((audio) => {
     audio.pause();
     audio.currentTime = 0;
@@ -307,6 +309,7 @@ async function playSelection() {
   if (!selected.length) return;
 
   stopAll(false);
+  const session = playbackSession;
   isPlaying = true;
   updateMixer();
   setStatus('A carregar as vocalizações selecionadas…', 'active');
@@ -319,8 +322,11 @@ async function playSelection() {
     audio.volume = volume;
     activeAudio.set(recording.id, audio);
     await new Promise((resolve) => window.setTimeout(resolve, index * 95));
+    if (session !== playbackSession) throw new Error('Reprodução cancelada.');
     return audio.play();
   }));
+
+  if (session !== playbackSession) return;
 
   const failed = results.filter((result) => result.status === 'rejected').length;
   if (failed === selected.length) {
