@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Vozes da Floresta Açoriana">
+  <rect width="512" height="512" rx="112" fill="#124d32"/>
+  <circle cx="386" cy="122" r="62" fill="#f3c85d" opacity=".95"/>
+  <path d="M92 350c76-16 139-52 188-108 31-35 77-48 122-34-35 14-62 37-81 69 40 5 72 24 96 56-59-6-108 7-147 40-44 37-104 46-178 27 39-6 70-22 94-49-35 10-66 10-94-1Z" fill="#e8f7eb"/>
+  <circle cx="328" cy="230" r="12" fill="#082c20"/>
+  <path d="M399 248l70 28-72 15Z" fill="#f3c85d"/>
+  <path d="M107 381c55-55 118-98 188-129" fill="none" stroke="#91d5a2" stroke-width="20" stroke-linecap="round"/>
+  <path d="M121 352c-38-9-65-1-82 25 37 15 67 9 90-18M177 308c-36-22-68-21-95 2 29 30 61 34 96 11" fill="#45a866"/>
+  <path d="M356 109v88c0 24-20 43-45 43s-45-19-45-43 20-43 45-43c9 0 18 3 25 7v-80l82-20v47Z" fill="#fffdf4"/>
+</svg>
