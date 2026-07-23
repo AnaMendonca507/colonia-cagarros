@@ -1,0 +1,21 @@
+{
+  "id": "./",
+  "name": "Vozes da Floresta Açoriana",
+  "short_name": "Vozes Açores",
+  "description": "Misturador educativo de vocalizações de aves terrestres gravadas nos Açores.",
+  "lang": "pt-PT",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#edf8ef",
+  "theme_color": "#124d32",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
