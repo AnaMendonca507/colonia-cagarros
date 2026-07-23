@@ -1,0 +1,371 @@
+/* Ajustes mobile-first para utilização no telemóvel */
+html {
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+
+button,
+input,
+label,
+a {
+  touch-action: manipulation;
+}
+
+@media (max-width: 700px) {
+  body {
+    padding-bottom: calc(220px + env(safe-area-inset-bottom));
+    overscroll-behavior-y: contain;
+  }
+
+  .hero {
+    position: relative;
+    grid-template-columns: 48px minmax(0, 1fr) 44px;
+    gap: 11px;
+    padding: calc(13px + env(safe-area-inset-top)) 12px 14px;
+  }
+
+  .hero-mark {
+    width: 48px;
+    height: 48px;
+    border-radius: 16px;
+  }
+
+  .hero-mark svg {
+    width: 35px;
+  }
+
+  .hero .eyebrow {
+    font-size: .62rem;
+    margin-bottom: 3px;
+  }
+
+  h1 {
+    max-width: 245px;
+    font-size: clamp(1.3rem, 6vw, 1.65rem);
+    line-height: 1.04;
+  }
+
+  .hero-copy {
+    grid-column: 1 / -1;
+    margin: 2px 2px 0;
+    font-size: .82rem;
+    line-height: 1.35;
+  }
+
+  .icon-button {
+    position: static;
+    width: 44px;
+    height: 44px;
+    align-self: start;
+  }
+
+  main {
+    width: calc(100% - 16px);
+    margin: 10px auto 28px;
+  }
+
+  .intro-panel {
+    display: block;
+    padding: 12px 13px;
+    border-radius: 15px;
+    box-shadow: 0 8px 24px rgba(8, 44, 32, .09);
+  }
+
+  .intro-panel p {
+    margin-top: 6px;
+    font-size: .78rem;
+    line-height: 1.4;
+  }
+
+  .azores-seal {
+    font-size: .83rem;
+  }
+
+  .filter-panel {
+    margin-top: 10px;
+    padding: 13px;
+    gap: 13px;
+    border-radius: 18px;
+    box-shadow: 0 9px 28px rgba(8, 44, 32, .1);
+  }
+
+  .search-field {
+    gap: 5px;
+    font-size: .82rem;
+  }
+
+  .search-field input {
+    min-height: 48px;
+    padding: 12px 14px;
+    border-radius: 13px;
+    font-size: 16px;
+  }
+
+  legend {
+    margin-bottom: 7px;
+    font-size: .78rem;
+  }
+
+  .chip-row {
+    flex-wrap: nowrap;
+    gap: 7px;
+    margin: 0 -13px;
+    padding: 0 13px 4px;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x proximity;
+    scrollbar-width: none;
+  }
+
+  .chip-row::-webkit-scrollbar {
+    display: none;
+  }
+
+  .filter-chip {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+  }
+
+  .filter-chip span {
+    min-height: 42px;
+    padding: 9px 13px;
+    font-size: .8rem;
+  }
+
+  .filter-actions {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 8px;
+  }
+
+  .soft-button,
+  .text-button {
+    min-height: 44px;
+    padding: 10px 12px;
+    font-size: .8rem;
+  }
+
+  .catalogue-heading {
+    flex-direction: row;
+    align-items: end;
+    margin: 24px 3px 11px;
+  }
+
+  .catalogue-heading h2 {
+    font-size: 1.28rem;
+  }
+
+  .catalogue-heading .eyebrow {
+    font-size: .65rem;
+  }
+
+  .visible-count {
+    flex: 0 0 auto;
+    padding: 7px 9px;
+    font-size: .72rem;
+  }
+
+  .species-grid {
+    grid-template-columns: 1fr;
+    gap: 11px;
+  }
+
+  .species-card {
+    border-radius: 18px;
+    box-shadow: 0 8px 22px rgba(8, 44, 32, .09);
+  }
+
+  .species-card::before {
+    width: 5px;
+  }
+
+  .species-header {
+    grid-template-columns: 44px minmax(0, 1fr) auto;
+    gap: 10px;
+    padding: 13px 12px 10px 16px;
+  }
+
+  .species-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 14px 14px 14px 5px;
+    font-size: .86rem;
+  }
+
+  .species-title h3 {
+    margin-bottom: 2px;
+    font-size: 1rem;
+  }
+
+  .species-title p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: .75rem;
+  }
+
+  .recording-total {
+    grid-column: auto;
+    justify-self: auto;
+    padding: 5px 7px;
+    font-size: .66rem;
+  }
+
+  .recordings {
+    gap: 7px;
+    padding: 0 10px 11px 15px;
+  }
+
+  .recording-option {
+    min-height: 66px;
+    grid-template-columns: 26px minmax(0, 1fr);
+    gap: 9px;
+    padding: 12px 11px;
+    border-radius: 14px;
+  }
+
+  .recording-option input {
+    width: 24px;
+    height: 24px;
+    margin-top: 0;
+  }
+
+  .recording-copy strong {
+    font-size: .9rem;
+  }
+
+  .recording-meta {
+    font-size: .72rem;
+  }
+
+  .source-link {
+    min-height: 38px;
+    align-items: center;
+    margin-top: 3px;
+    font-size: .74rem;
+  }
+
+  .pending-box {
+    margin: 0 10px 12px 15px;
+    font-size: .78rem;
+  }
+
+  .mixer {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    transform: none;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 8px 10px;
+    padding: 10px 10px calc(9px + env(safe-area-inset-bottom));
+    border-width: 1px 0 0;
+    border-radius: 20px 20px 0 0;
+    box-shadow: 0 -12px 38px rgba(8, 44, 32, .32);
+  }
+
+  .mixer-summary {
+    min-height: 42px;
+    gap: 9px;
+  }
+
+  .mixer-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 12px;
+    font-size: 1.1rem;
+  }
+
+  .mixer-summary strong {
+    font-size: .84rem;
+  }
+
+  .mixer-summary div > span {
+    font-size: .7rem;
+  }
+
+  .volume-control {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    gap: 7px;
+    font-size: .7rem;
+  }
+
+  .volume-control input {
+    width: 100%;
+    min-height: 30px;
+  }
+
+  .mixer-actions {
+    grid-column: 1 / -1;
+    grid-row: 3;
+    display: grid;
+    grid-template-columns: 1.35fr 1fr auto;
+    gap: 7px;
+  }
+
+  .mixer-actions button {
+    min-height: 48px;
+    padding: 10px 12px;
+    border-radius: 13px;
+    font-size: .82rem;
+  }
+
+  .clear-button {
+    grid-column: auto;
+    min-width: 66px;
+  }
+
+  .status {
+    grid-column: 1 / -1;
+    grid-row: 4;
+    min-height: 17px;
+    margin: -2px 1px 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: .68rem;
+  }
+
+  .dialog-card {
+    max-height: calc(100dvh - 20px);
+    padding: 24px 18px calc(20px + env(safe-area-inset-bottom));
+    border-radius: 20px;
+  }
+
+  .dialog-card h2 {
+    font-size: 1.55rem;
+  }
+}
+
+@media (max-width: 380px) {
+  body {
+    padding-bottom: calc(265px + env(safe-area-inset-bottom));
+  }
+
+  .hero-mark {
+    display: none;
+  }
+
+  .hero {
+    grid-template-columns: minmax(0, 1fr) 44px;
+  }
+
+  .species-header {
+    grid-template-columns: 40px minmax(0, 1fr);
+  }
+
+  .recording-total {
+    grid-column: 2;
+    justify-self: start;
+  }
+
+  .mixer-actions {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .clear-button {
+    grid-column: 1 / -1;
+    min-height: 40px !important;
+  }
+}
