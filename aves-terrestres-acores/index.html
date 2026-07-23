@@ -75,7 +75,7 @@
       <span class="mixer-icon" aria-hidden="true">♫</span>
       <div>
         <strong id="selectionTitle">Nenhuma gravação selecionada</strong>
-        <span id="selectionDetail">Escolhe uma ou mais vocalizações.</span>
+        <span id="selectionDetail">Toca numa vocalização para a ouvires.</span>
       </div>
     </div>
 
@@ -90,7 +90,7 @@
       <button id="stopButton" class="stop-button" type="button" disabled><span aria-hidden="true">■</span> Parar</button>
       <button id="clearSelectionButton" class="clear-button" type="button" disabled>Limpar</button>
     </div>
-    <p id="status" class="status" role="status" aria-live="polite">A floresta está em silêncio.</p>
+    <p id="status" class="status" role="status" aria-live="polite">Toca numa vocalização para a ouvires imediatamente.</p>
   </aside>
 
   <dialog id="infoDialog" class="info-dialog">
@@ -98,7 +98,7 @@
       <button id="closeInfoButton" class="dialog-close" type="button" aria-label="Fechar">×</button>
       <p class="eyebrow">Informação e créditos</p>
       <h2>Como usar</h2>
-      <p>Marca as gravações que pretendes ouvir. Podes combinar espécies, cantos, chamamentos e alarmes. Ao carregar em <strong>Tocar seleção</strong>, as faixas entram em ciclo até carregares em <strong>Parar</strong>.</p>
+      <p>Marca uma vocalização para começar a ouvi-la imediatamente. Podes continuar a marcar outras espécies e tipos de som enquanto as anteriores estão a tocar. Ao desmarcar uma vocalização, pára apenas esse som. O botão <strong>Parar</strong> silencia tudo sem apagar a seleção; <strong>Limpar</strong> pára os sons e desmarca todas as escolhas.</p>
       <h3>Critérios da biblioteca</h3>
       <ul>
         <li>A localização indicada na ficha tem de ser nos Açores.</li>
@@ -107,7 +107,7 @@
       </ul>
       <h3>Notas desta versão</h3>
       <p><strong>Priolo:</strong> inclui a gravação XC350481, indicada pela equipa do projeto.</p>
-      <p><strong>Tentilhão dos Açores:</strong> inclui a gravação XC909663, identificada na app como vocalização de alarme de macho.</p>
+      <p><strong>Tentilhão dos Açores:</strong> inclui as gravações XC909663 e XC483594, identificadas como macho.</p>
       <p><strong>Verdilhão:</strong> a gravação candidata tem uma localização demasiado genérica na ficha consultada e permanece pendente até confirmação.</p>
       <p><strong>Mocho:</strong> nos Açores a espécie residente é <em>Asio otus</em>, também designada bufo-pequeno.</p>
       <p class="dialog-note">As ligações “Ver no Xeno-canto” permitem consultar a ficha original, o autor e a licença de cada som.</p>
@@ -117,5 +117,6 @@
   <script src="app.js" defer></script>
   <script src="priolo-patch.js" defer></script>
   <script src="tentilhao-patch.js" defer></script>
+  <script src="live-playback-patch.js" defer></script>
 </body>
 </html>
