@@ -1,0 +1,40 @@
+.install-app-button {
+  flex: 0 0 auto;
+  margin-left: auto;
+  min-height: 44px;
+  padding: 10px 16px;
+  border: 0;
+  border-radius: 14px;
+  background: var(--forest-800);
+  color: white;
+  font-weight: 900;
+  box-shadow: 0 9px 22px rgba(18, 77, 50, .2);
+}
+
+.install-app-button:active {
+  transform: translateY(1px);
+}
+
+.install-app-button[hidden] {
+  display: none !important;
+}
+
+@media (max-width: 700px) {
+  .intro-panel {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .install-app-button {
+    width: 100%;
+    margin: 10px 0 0;
+    min-height: 48px;
+    font-size: .92rem;
+  }
+}
+
+@media (display-mode: standalone) {
+  .install-app-button {
+    display: none !important;
+  }
+}
