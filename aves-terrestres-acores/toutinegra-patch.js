@@ -18,6 +18,13 @@
       sex: 'Não indicado',
       location: 'Açores',
       recordist: 'Consultar ficha do Xeno-canto'
+    },
+    {
+      id: '488225',
+      type: 'Vocalização',
+      sex: 'Não indicado',
+      location: 'Açores',
+      recordist: 'Consultar ficha do Xeno-canto'
     }
   ];
 
